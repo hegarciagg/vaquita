@@ -1,0 +1,70 @@
+{{#each errors}}
+ <div class="alert alert-danger alert-dismissible fade show" role="alert">
+     {{text}}
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+     </button>
+  </div>
+{{/each}}
+<div class="col-md-4 mx-auto">
+    <div class="card">
+    <div class="card-header">
+        <div class="h5">Nuevo Animal</div>
+    </div>
+
+    <div class="card-body">
+    <form action="/notes/new-note" method="POST">
+      <div action="form-group">
+        <input type="number" class="form-control" name="cod_animales" placeholder="Código Animal" autofocus>
+      </div>
+      <div action="form-group">
+             <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus>
+       </div>
+        <div action="form-group">
+             <input type="text" class="form-control" name="nombre_padre" placeholder="Nombre  Padre" autofocus>
+        </div>
+        <div action="form-group">
+             <input type="text" class="form-control" name="nombre_madre" placeholder="Nombre  Madre" autofocus>
+        </div>
+        <div action="form-group">
+             <input type="text" class="form-control" name="procedencia_animal" placeholder="Procedencia Animal" autofocus>
+        </div>
+        <div action="form-group">
+             <input type="text" class="form-control" name="fecha_nacimiento_animal" placeholder="Fecha Nacimiento">
+        </div>
+        <div action="form-group">
+            <input type="text" class="form-control" name="identificacion_animal" placeholder="Identificación Animal" autofocus>
+        </div>
+        <div action="form-group">
+             <input type="number" class="form-control" name="sexo_animal" placeholder="Sexo" min="0" max="1"autofocus>
+        </div>
+        <div action="form-group">
+             <input type="text" class="form-control" name="detalle_animal" placeholder="Detalle" autofocus>
+        </div>
+        <div action="form-group">
+             <input type="text" class="form-control" name="proposito_animal" placeholder="Propósito " autofocus>
+        </div>
+        <div action="form-group">
+            <input type="text" class="form-control" name="raza_animal" placeholder="Raza" autofocus>
+        </div>
+        <div action="form-group">
+            <input type="number" class="form-control" name="estado_animal" placeholder="Estado" autofocus>
+        </div>
+        <div action="form-group">
+            <input type="text" class="form-control" name="color_animal" placeholder="Color" autofocus>
+        </div>
+        <div action="form-group">
+            <input type="text" class="form-control" name="estado_rep_animal" placeholder="Estado Reproducción" autofocus>
+        </div>
+        <div class="form-group">
+            <textarea name="descripcion" class="form-control" placeholder="Descripción del animal"></textarea>
+        </div>
+        <div action="form-group">
+            <button class="btn btn-success btn-block">
+                                Grabar formulario
+            </button>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
