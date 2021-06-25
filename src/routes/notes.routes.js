@@ -12,9 +12,10 @@ const {
 const { route } = require("../server");
 router.get("/notes/add", renderNoteForm);
 
+//New note
 router.post("/notes/add", renderNoteForm);
 
-router.post("/notes/add", createNewNote);
+router.post("/notes/new-note", createNewNote);
 
 // Get All Note
 router.get("/notes", renderNotes);
