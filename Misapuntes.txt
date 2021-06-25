@@ -1,0 +1,13 @@
+DEPENDENCIAS AL INICIO NODE
+
+npm init -y
+npm i express connect-flash bcryptjs express-handlebars express-session method-override mongoose passport passport-local
+npm install dotenv nodemon handlebars npm-check-updates -D
+
+CREAR LA ESTRUCTURA BASICA DE LAS CARPETAS
+-creo database, index, server .js
+-mkdir src
+-cd src 
+-mkdir mkdir config controllers helpers models public routes views
+3)
+-Configuro el servidor, manipulo los archivos index.js y server.js (https://www.youtube.com/watch?v=OmW8EVaiHKA&list=PLo5lAe9kQrwqUEXK7oQbzv63KsdODzuAy&index=4)
