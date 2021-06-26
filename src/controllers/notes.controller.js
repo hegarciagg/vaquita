@@ -41,6 +41,7 @@ notesCtrl.createNewNote = async(req, res) => {
     descripcion,
   });
   await newNote.save();
+  req.flash('success_msg','Creada exitosamente');
   res.redirect('/notes');
 };
 notesCtrl.renderNotes = async(req, res) => {
@@ -89,13 +90,15 @@ notesCtrl.updateNote = async (req, res) => {
     color_animal,
     estado_rep_animal,
     descripcion,});
-  res.redirect('/notes');
+    req.flash('success_msg','Actualizada exitosamente');
+    res.redirect('/notes');
   };
 
 notesCtrl.deletenote = async(req, res) => {
   //console.log(req.params.id);
   //res.send('borrando nota');
   await Note.findByIdAndDelete(req.params.id);
+  req.flash('success_msg','Eliminada exitosamente');
   res.redirect('/notes');
 };
 module.exports = notesCtrl;

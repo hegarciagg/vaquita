@@ -1,0 +1,78 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>EDITAR NOTA</h3>
+        </div>
+        <div class="card-body">
+            <form action="/notes/edit/{{note._id}}?_method=PUT" method="POST"}>
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <b>Código del  animal:</b>
+                    <input type="Number" name="cod_animales" class="form-control" value="{{note.cod_animales}}">
+                </div>
+                <div class="form-group">
+                    <b>Nombre animal:</b>
+                    <input type="text" name="nombre" class="form-control" value="{{note.nombre}}" placeholder="Codigo">  
+                </div>
+                <div class="form-group">
+                    <b>Nombre del padre:</b>
+                    <input type="text" name="nombre_padre" class="form-control" value="{{note.nombre_padre}}">
+                </div>
+                <div class="form-group">
+                    <b>Nombre de la madre:</b>
+                    <input type="text" name="nombre_madre" class="form-control" value="{{note.nombre_madre}}">  
+                </div>
+                <div class="form-group">
+                    <b>Procedencia:</b>
+                    <input type="text" name="procedencia_animal" class="form-control" value="{{note.procedencia_animal}}">  
+                </div>
+                <div class="form-group">
+                    <b>fecha de nacimiento:</b>
+                    <input type="text" name="fecha_nacimiento_animal" class="form-control" value="{{note.fecha_nacimiento_animal}}">  
+                </div>
+                <div class="form-group">
+                    <b>identificacion_animal:</b>
+                    <input type="text" name="identificacion_animal" class="form-control" value="{{note.identificacion_animal}}">  
+                </div>
+
+                <div class="form-group">
+                    <b>sexo_animal:</b>
+                    <input type="Number" name="sexo_animal" class="form-control" value="{{note.sexo_animal}}">  
+                </div>
+                <div class="form-group">
+                    <b>detalle:</b>
+                    <input type="text" name="detalle_animal" class="form-control" value="{{note.detalle_animal}}">  
+                </div>
+
+                <div class="form-group">
+                    <b>proposito:</b>
+                    <input type="text" name="proposito_animal" class="form-control" value="{{note.proposito_animal}}">  
+                </div>
+
+                <div class="form-group">
+                    <b>Raza:</b>
+                    <input type="text" name="raza_animal" class="form-control" value="{{note.raza_animal}}">  
+                </div>
+                <div class="form-group">
+                    <b>estado:</b>
+                    <input type="Number" name="estado_animal" class="form-control" value="{{note.estado_animal}}">  
+                </div>
+
+                <div class="form-group">
+                    <b>Color:</b>
+                    <input type="text" name="color_animal" class="form-control" value="{{note.color_animal}}">  
+                </div>
+                <div class="form-group">
+                    <b>Estado reproduccion:</b>
+                    <input type="text" name="estado_rep_animal" class="form-control" value="{{note.estado_rep_animal}}">  
+                </div>
+
+                <div class="form-group">
+                   <b>Descripción:</b>
+                    <textarea name="descripcion" class="form-control" value="{{note.descripcion}}"></textarea>
+                </div>
+                <div class="form-group">
+                <button  class="btn btn-primary btn-block" type="submit">
+                    Grabar
+                </button>
+                </div>
