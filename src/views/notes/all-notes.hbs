@@ -1,0 +1,31 @@
+<div class="row">
+{{#each notes}}
+   <div class="col-md-3"> 
+       <div class="card">
+           <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between aligh-items-cent">
+                <b>Nombre:</b>{{nombre}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i><hr/></a>
+                                               
+              </h5>
+              <p class="card-text"><b>Raza: </b> {{raza_animal}}</p>
+              <p class="card-text"><b>Nace: </b>{{fecha_nacimiento_animal}}</p
+              <p class="card-text"><b>Color:</b>{{color_animal}}</p
+              <p class="card-text"><b>Descripción:</b><br/>{{descripcion}}</p>
+              <form action="/notes/delete/{{_id}}" method="post">
+                <bottom class="btn btn-danger btn-block btn-sm">
+                  Borrar
+                </bottom>
+              </form>
+            </div>
+       </div>  
+
+   </div>
+{{else}}
+<div class="card mx-auto">
+    <div class="card-body">
+        <p class="lead">No hay animales aún</p>
+        <a href="/notes/add" class="btn btn-success btn-block">Crea uno</a>
+    </div>
+</div>
+{{/each}}
+</div>
