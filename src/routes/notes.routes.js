@@ -7,13 +7,13 @@ const {
   renderNotes,
   renderEditForm,
   updateNote,
-  deleteNote,
+  deletenote
 } = require("../controllers/notes.controller");
 const { route } = require("../server");
-router.get("/notes/add", renderNoteForm);
+
 
 //New note
-router.post("/notes/add", renderNoteForm);
+router.get("/notes/add", renderNoteForm);
 
 router.post("/notes/new-note", createNewNote);
 
@@ -26,6 +26,6 @@ router.put("/notes/edit/:id", updateNote);
 
 //Delete Note
 
-router.delete("/notes/delete/:id", deleteNote);
+router.delete("/notes/delete/:id", deletenote);
 
 module.exports = router;

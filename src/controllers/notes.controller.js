@@ -41,22 +41,61 @@ notesCtrl.createNewNote = async(req, res) => {
     descripcion,
   });
   await newNote.save();
-  res.send("create new note ");
+  res.redirect('/notes');
 };
 notesCtrl.renderNotes = async(req, res) => {
   const notes = await Note.find().lean();
   res.render('notes/all-notes',{notes});
 };
 
-notesCtrl.renderEditForm = (req, res) => {
-  res.send("editar formulari");
+notesCtrl.renderEditForm = async(req, res) => {
+  const note = await Note.findById(req.params.id).lean();
+  console.log(note);
+  res.render('notes/edit-note',{note});
 };
 
-notesCtrl.updateNote = (req, res) => {
-  res.send("actualizar nota");
-};
+notesCtrl.updateNote = async (req, res) => {
+  const {
+    cod_animales,
+    nombre,
+    nombre_padre,
+    nombre_madre,
+    procedencia_animal,
+    fecha_nacimiento_animal,
+    identificacion_animal,
+    sexo_animal,
+    detalle_animal,
+    proposito_animal,
+    raza_animal,
+    estado_animal,
+    color_animal,
+    estado_rep_animal,
+    descripcion,
+  } = req.body;
+  
+  console.log(req.body);
+  await Note.findByIdAndUpdate(req.params.id,{cod_animales,
+    nombre,
+    nombre_padre,
+    nombre_madre,
+    procedencia_animal,
+    fecha_nacimiento_animal,
+    identificacion_animal,
+    sexo_animal,
+    detalle_animal,
+    proposito_animal,
+    raza_animal,
+    estado_animal,
+    color_animal,
+    estado_rep_animal,
+    descripcion,});
+  res.redirect('/notes');
+  };
 
-notesCtrl.deleteNote = (req, res) => {
-  res.send("Borrando nota");
+notesCtrl.deletenote = async(req, res) => {
+  //console.log(req.params.id);
+  //res.send('borrando nota');
+  await Note.findByIdAndDelete(req.params.id);
+  res.redirect('/notes');
 };
 module.exports = notesCtrl;
