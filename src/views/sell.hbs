@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+      <img src="img/cow.jpg" alt="venta de prueba" class-img-top />
+      <div class="card-body">
+        <h3>915 $</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi,
+          dolorem?</p>
+      </div>
+      <div class="card-footer">
+
+        
+        <form action="/checkout" method="POST">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_51IihUqHH2uJ3GYiWQkWkta9LVJ72uDtolh5NqaVwPfvmvefJYErvp43B7KBQduqQvB83h82HZJGV6rGJxZPZZbbm007E3K1mW7"
+                data-amount="91500"
+                data-name="Hoster"
+                data-description="Vaca lechera"
+                data-image="img/logocows.png"
+                data-locate="auto">
+                </script>
+                <script>
+                    document.getElementsByClassName('stripe-button-el')[0].style.display='none';
+                </script>
+                <button class="btn btn-dark btn-block" > Comprar <i class="fas fa-shopping-cart"></i> </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
