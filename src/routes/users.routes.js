@@ -1,4 +1,4 @@
-const{Router}=require('express');
+const { Router }=require('express');
 const router=Router();
 
 const {renderSignUpForm,renderSigninForm,signup, signin, logout}=require('..//controllers/users.controller');
