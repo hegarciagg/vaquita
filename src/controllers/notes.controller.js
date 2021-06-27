@@ -40,17 +40,22 @@ notesCtrl.createNewNote = async(req, res) => {
     estado_rep_animal,
     descripcion,
   });
+  newNote.user=req.user.id;
   await newNote.save();
   req.flash('success_msg','Creada exitosamente');
   res.redirect('/notes');
 };
 notesCtrl.renderNotes = async(req, res) => {
-  const notes = await Note.find().lean();
+  const notes = await Note.find({user:req.user.id}).lean();
   res.render('notes/all-notes',{notes});
 };
 
 notesCtrl.renderEditForm = async(req, res) => {
   const note = await Note.findById(req.params.id).lean();
+  if(note.user != req.user.id){
+    req.flash('error_msg', 'No autorizado')
+    return res.redirect('/notes');
+  }
   console.log(note);
   res.render('notes/edit-note',{note});
 };
