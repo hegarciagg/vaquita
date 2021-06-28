@@ -21,6 +21,8 @@ notesCtrl.createNewNote = async(req, res) => {
     estado_animal,
     color_animal,
     estado_rep_animal,
+    precio_compra,
+    precio_venta,
     descripcion,
   } = req.body;
   const newNote = new Note({
@@ -38,6 +40,8 @@ notesCtrl.createNewNote = async(req, res) => {
     estado_animal,
     color_animal,
     estado_rep_animal,
+    precio_compra,
+    precio_venta,
     descripcion,
   });
   newNote.user=req.user.id;
@@ -76,6 +80,8 @@ notesCtrl.updateNote = async (req, res) => {
     estado_animal,
     color_animal,
     estado_rep_animal,
+    precio_compra,
+    precio_venta,
     descripcion,
   } = req.body;
   
@@ -94,6 +100,8 @@ notesCtrl.updateNote = async (req, res) => {
     estado_animal,
     color_animal,
     estado_rep_animal,
+    precio_compra,
+    precio_venta,
     descripcion,});
     req.flash('success_msg','Actualizada exitosamente');
     res.redirect('/notes');

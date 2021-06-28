@@ -24,10 +24,12 @@ const NoteSchema = new Schema(
         type: String,
         required: true,
      },
+
      fecha_nacimiento_animal:{
         type: String,
         required: true,
      },
+
      identificacion_animal:{
         type: String,
         required: true,
@@ -41,6 +43,7 @@ const NoteSchema = new Schema(
         type: String,
         required: true,
      },
+
      proposito_animal:{
         type: String,
         required: true,
@@ -50,6 +53,7 @@ const NoteSchema = new Schema(
         type: String,
         required: true,
      },
+
      estado_animal:{
         type: String,
         required: true,
@@ -63,15 +67,25 @@ const NoteSchema = new Schema(
         type: String,
         required: true,
      },
+
+     precio_compra:{
+      type:String,
+      required: true,
+   },
+     precio_venta:{
+      type:String,
+      required: true,        
+   },
      descripcion:{
         type: String,
         required: true,
      },
+
      user:{
         type: String,
-        required: true,
-        
-     }
+        required: true,      
+     },
+
     },
     {
      timestamps: true,
